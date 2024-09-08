@@ -64,7 +64,7 @@ En realidad en teroria si existe el IPV5 conocido como:
 
 
 - Extension Headers:
-- 
+
 | Order         | Header Type                                      | Next Header Code |
 |---------------|--------------------------------------------------|------------------|
 | 1             | Basic IPv6 Header                                | -                |
