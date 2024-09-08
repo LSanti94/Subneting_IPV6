@@ -63,7 +63,8 @@ En realidad en teroria si existe el IPV5 conocido como:
 | 192 - 320  | <span style="color: green;">**Destination Address**</span> | Dirección de destino (128 bits) |
 
 
-- Extension Headers: 
+- Extension Headers:
+- 
 | Order         | Header Type                                      | Next Header Code |
 |---------------|--------------------------------------------------|------------------|
 | 1             | Basic IPv6 Header                                | -                |
