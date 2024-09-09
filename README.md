@@ -181,4 +181,5 @@ Los dos puntos `::` irán donde hay más ceros consecutivos.
 - **UNIQUE LOCAL**
   - Direccionamiento privado.
 
-- **MULTICAST
+- **MULTICAST**
+  - Identifica un grupo de interfaces en diferentes nodos, una interfaz puede tener varios identificadores para diferentes protocolos.
