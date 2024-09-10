@@ -183,3 +183,35 @@ Los dos puntos `::` irán donde hay más ceros consecutivos.
 
 - **MULTICAST**
   - Identifica un grupo de interfaces en diferentes nodos, una interfaz puede tener varios identificadores para diferentes protocolos.
+
+---
+
+## Direcciones Globales
+
+Rango 2000::/3 a 3FFF::/3
+
+Un aspecto importante que siempre vamos a realizar el subneteo en el cuarto bloque porque los primeros 48 bits van a ser del (ISP, RIR, IANA) RIR = Regional Internet Registries
+
+Subnet ID 16 bits
+
+Para mayor información están:
+- RFC 7020
+- RFC 7029
+
+## Tecnologías de Transición
+
+- DualStack
+
+![Diagrama](imagenes/Dual-Stack.png)
+
+- Tuneles
+
+![Diagrama](imagenes/Tuneles.png)
+
+- Traducción
+
+![Diagrama](imagenes/Traducción.png)
+
+---
+
+## Subneteo IPv6
