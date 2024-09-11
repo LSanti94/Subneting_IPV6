@@ -179,7 +179,7 @@ Los dos puntos `::` irán donde hay más ceros consecutivos.
   - No son enrutables a través de Internet.
 
 - **UNIQUE LOCAL**
-  - Direccionamiento privado.
+  - Direccionamiento privado `FC00`.
 
 - **MULTICAST**
   - Identifica un grupo de interfaces en diferentes nodos, una interfaz puede tener varios identificadores para diferentes protocolos.
