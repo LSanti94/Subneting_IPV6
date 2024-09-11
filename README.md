@@ -86,22 +86,22 @@ La nomenclatura de 16 bits es la siguiente: `0123456789ABCDEF`
 
 | Hexadecimal | Decimal | Binario |
 |-------------|---------|---------|
-| 0           | 0       | 0000    |
-| 1           | 1       | 0001    |
-| 2           | 2       | 0010    |
-| 3           | 3       | 0011    |
-| 4           | 4       | 0100    |
-| 5           | 5       | 0101    |
-| 6           | 6       | 0110    |
-| 7           | 7       | 0111    |
-| 8           | 8       | 1000    |
-| 9           | 9       | 1001    |
-| A           | 10      | 1010    |
-| B           | 11      | 1011    |
-| C           | 12      | 1100    |
-| D           | 13      | 1101    |
-| E           | 14      | 1110    |
-| F           | 15      | 1111    |
+| 0           | 1       | 0000    |
+| 1           | 2       | 0001    |
+| 2           | 3       | 0010    |
+| 3           | 4       | 0011    |
+| 4           | 5       | 0100    |
+| 5           | 6       | 0101    |
+| 6           | 7       | 0110    |
+| 7           | 8       | 0111    |
+| 8           | 9       | 1000    |
+| 9           | 10      | 1001    |
+| A           | 11      | 1010    |
+| B           | 12      | 1011    |
+| C           | 13      | 1100    |
+| D           | 14      | 1101    |
+| E           | 15      | 1110    |
+| F           | 16      | 1111    |
 
 **Ejemplo:**
 
@@ -214,4 +214,119 @@ Para mayor información están:
 
 ---
 
-## Subneteo IPv6
+# Subneteo IPv6
+
+| **Prefijo Global**  | 48 bits (proviene del ISP, RIR, IANA) |
+|---------------------|---------------------------------------|
+| **RIR**             | Regional Internet Registries          |
+| **Subnet ID**       | 16 bits                               |
+
+2<sup>16</sup> = 65,536 subredes
+
+Ejemplo:
+
+| Subredes |
+|---------|
+| 2001:1001:1001:0000 |
+| 2001:1001:1001:0001 |
+| 2001:1001:1001:0002 |
+| 2001:1001:1001:0003 |
+| 2001:1001:1001:0004 |
+| 2001:1001:1001:FFFF |
+
+### Paso 1: Definir el prefijo de red
+
+2<sup>16</sup> = 65,536
+
+| Potencia | Resultado |
+|----------|-----------|
+| 2<sup>0</sup>  | 1         |
+| 2<sup>1</sup>  | 2         |
+| 2<sup>2</sup>  | 4         |
+| 2<sup>3</sup>  | 8         |
+| 2<sup>4</sup>  | 16        |
+| 2<sup>5</sup>  | 32        |
+| 2<sup>6</sup>  | 64        |
+| 2<sup>7</sup>  | 128       |
+| 2<sup>8</sup>  | 256       |
+| 2<sup>9</sup>  | 512       |
+| 2<sup>10</sup> | 1,024     |
+| 2<sup>11</sup> | 2,048     |
+| 2<sup>12</sup> | 4,096     |
+| 2<sup>13</sup> | 8,192     |
+| 2<sup>14</sup> | 16,384    |
+| 2<sup>15</sup> | 32,768    |
+
+Subredes
+
+| #   | Representación Binaria | Hexadecimal |
+|-----|------------------------|-------------|
+| 1   | 1111 1111 1111 1100   | FFFC        |
+| 2   | 1111 1111 1111 1101   | FFFD        |
+| 3   | 1111 1111 1111 1110   | FFFE        |
+| 4   | 1111 1111 1111 1111   | FFFF        |
+
+**Caso 2:** Necesitamos encontrar 16 subredes o configurar 16 subredes distintas.
+
+| Potencia | Resultado |
+|----------|-----------|
+| 2<sup>0</sup>  | 1         |
+| 2<sup>1</sup>  | 2         |
+| 2<sup>2</sup>  | 4         |
+| 2<sup>3</sup>  | 8         |
+
+La suma es 16 bits
+
+| #   | Representación Binaria | Hexadecimal |
+|-----|------------------------|-------------|
+| 1   | 1111 1111 1111 0000   | FFF0        |
+| 2   | 1111 1111 1111 0001   | FFF1        |
+| 3   | 1111 1111 1111 0010   | FFF2        |
+| 4   | 1111 1111 1111 0011   | FFF3        |
+| 5   | 1111 1111 1111 0100   | FFF4        |
+| 6   | 1111 1111 1111 0101   | FFF5        |
+| 7   | 1111 1111 1111 0110   | FFF6        |
+| 8   | 1111 1111 1111 0111   | FFF7        |
+| 9   | 1111 1111 1111 1000   | FFF8        |
+| 10  | 1111 1111 1111 1001   | FFF9        |
+| 11  | 1111 1111 1111 1010   | FFFA        |
+| 12  | 1111 1111 1111 1011   | FFFB        |
+| 13  | 1111 1111 1111 1100   | FFFC        |
+| 14  | 1111 1111 1111 1101   | FFFD        |
+| 15  | 1111 1111 1111 1110   | FFFE        |
+| 16  | 1111 1111 1111 1111   | FFFF        |
+
+**Caso 3:**
+- Tenemos la dirección IP:
+  - 2001:1:1:1:x::/48
+
+¿Cuál sería el hexadecimal de la subred 8888?
+
+En este caso, comenzamos desde 2<sup>15</sup>.
+
+| Potencia | Resultado | Binario |
+|----------|-----------|---------|
+| 2<sup>15</sup> | 32,768    | 0       |
+| 2<sup>14</sup> | 16,384    | 0       |
+| 2<sup>13</sup> | 8,192     | 1       |
+| 2<sup>12</sup> | 4,096     | 0       |
+| 2<sup>11</sup> | 2,048     | 0       |
+| 2<sup>10</sup> | 1,024     | 0       |
+| 2<sup>9</sup>  | 512       | 1       |
+| 2<sup>8</sup>  | 256       | 0       |
+| 2<sup>7</sup>  | 128       | 1       |
+| 2<sup>6</sup>  | 64        | 0       |
+| 2<sup>5</sup>  | 32        | 1       |
+| 2<sup>4</sup>  | 16        | 1       |
+| 2<sup>3</sup>  | 8         | 1       |
+| 2<sup>2</sup>  | 4         | 0       |
+| 2<sup>1</sup>  | 2         | 0       |
+| 2<sup>0</sup>  | 1         | 0       |
+
+En hexadecimal sería:
+
+| Representación Binaria | Hexadecimal |
+|------------------------|-------------|
+| 0010 0010 1011 1000   | 22B8        |
+
+Así encontramos una subred específica dentro de las 65,536 subredes.
